@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Croc's Chips Naturais</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fffef7;
+      overflow: hidden;
+    }
+
+    #splash {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .animation-container {
+      display: flex;
+      align-items: center;
+      height: 100px;
+    }
+
+    .c-container {
+      font-size: 5rem;
+      font-weight: bold;
+      color: #F4B400;
+      opacity: 0;
+      transform: scale(0.5);
+      animation: popIn 0.6s ease-out forwards;
+    }
+
+    .rocs-text {
+      font-size: 5rem;
+      font-weight: bold;
+      color: #333;
+      margin-left: 10px;
+      opacity: 0;
+      transform: translateX(100%);
+      animation: slideIn 0.8s ease-out 1s forwards;
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.5); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes slideIn {
+      0% { transform: translateX(100%); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+
+    #main-content {
+      display: none;
+    }
+
+    header {
+      background-color: #d49200;
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-family: "Marker Felt", fantasy;
+      font-size: 4rem;
+      animation: tituloAnimado 1.5s ease-out forwards;
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    @keyframes tituloAnimado {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    nav {
+      text-align: center;
+      background-color: #F4B400;
+    }
+
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background-color: #e5a100;
+    }
+
+    section {
+      padding: 20px;
+      margin: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease-out;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+    }
+
+    .final-nota {
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      padding: 20px;
+      margin: 0 20px 40px 20px;
+    }
+
+    .produtos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .produto-box {
+      background-color: #fffef0;
+      border: 2px solid #f4b400;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="splash">
+    <div class="animation-container">
+      <div class="c-container">C</div>
+      <div class="rocs-text">roc's</div>
+    </div>
+  </div>
+
+  <div id="main-content">
+    <header>
+      <h1>Croc's</h1>
+      <p>Seu lanche, sua saúde, seu Croc’s!</p>
+    </header>
+
+    <section id="home" class="animar">
+      <h2>Bem-vindo à Croc's!</h2>
+      <p>Descubra os melhores chips naturais, preparados com ingredientes selecionados, muito sabor e qualidade. 100% naturais e saudáveis, perfeitos para o seu dia a dia.</p>
+    </section>
+
+    <section id="sobre" class="animar">
+      <h2>Sobre Nós</h2>
+      <p>A Croc's foi criada por duas estudantes de Administração com o objetivo de oferecer lanches saudáveis e saborosos, feitos com ingredientes naturais e sem aditivos artificiais.</p>
+    </section>
+
+    <section id="produtos" class="animar">
+      <h2>Sabores</h2>
+      <div class="produtos-grid">
+        <div class="produto-box">
+          <h3>Chips de Banana</h3>
+          <p>Chips crocantes e saudáveis feitos com banana, ideais para um lanche rápido e nutritivo.</p>
+        </div>
+        <div class="produto-box">
+          <h3>Chips de Mandioca</h3>
+          <p>Uma opção deliciosa e leve, feita com mandioca perfeita para quem ama sabor e saúde.</p>
+        </div>
+        <div class="produto-box">
+          <h3>Chips de Batata Doce</h3>
+          <p>Feitos com batata doce, esses chips são ricos em nutrientes e oferecem um sabor levemente adocicado e delicioso.</p>
+        </div>
+        <div class="produto-box">
+          <h3>Chips de Cenoura</h3>
+          <p>Crocantes, levemente adocicados e ricos em betacaroteno. Uma excelente opção nutritiva.</p>
+        </div>
+        <div class="produto-box" style="grid-column: span 3;">
+          <h3>Produto Exclusivo: Croka Mix</h3>
+          <p>Uma combinação especial de sabores naturais em uma só embalagem!</p>
+          <ul style="text-align: left;">
+            <li><strong>Doce & Crocante</strong> – Banana + Batata Doce</li>
+            <li><strong>Raízes Nutritivas</strong> – Mandioquinha + Cenoura</li>
+            <li><strong>Combo Completo</strong> – Banana + Mandioquinha + Cenoura + Batata Doce</li>
+          </ul>
+          <p><strong>Tempero:</strong> Canela para os sabores doces.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="curiosidade" class="animar">
+      <h2>Curiosidade</h2>
+      <p>O nome "Croc's" vem do som "croc croc" que fazemos ao mastigar algo crocante — assim como nossos chips!</p>
+    </section>
+
+    <div class="final-nota">
+      Este projeto foi desenvolvido no âmbito do curso de Administração, pelas estudantes Giovana Albuquerque e Maria Eduarda Diaz, como parte das atividades da disciplina de Empreendedorismo, na Faculdade Imaculada Conceição do Recife (FICR).
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Croc's Chips Naturais.</p>
+    </footer>
+  </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('splash').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+        document.body.style.overflow = 'auto';
+      }, 2500);
+    });
+
+    const sections = document.querySelectorAll('.animar');
+    function verificarScroll() {
+      const trigger = window.innerHeight * 0.90;
+      sections.forEach(sec => {
+        const topo = sec.getBoundingClientRect().top;
+        if (topo < trigger) {
+          sec.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', verificarScroll);
+    window.addEventListener('load', verificarScroll);
+  </script>
+
+</body>
+</html>
